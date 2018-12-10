@@ -1,0 +1,47 @@
+body {
+  margin: 200;
+  background-color: #333333;
+  height: 100%;
+  overflow: hidden;
+}
+.section  {
+  perspective: 1200px;
+  perspective-origin: center;
+}
+.container {
+  width: 1600px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  transition: 0.3s;
+  transform: rotateX(30deg) rotateZ(-30deg) rotateY(10deg) translate3d(0px, 0px,0px);
+  transform-style: preserve-3d;
+}
+.container-origin {
+  transform: rotate(0);
+  width: 1200px;
+}
+img {
+  width: 100%;
+}
+.card {
+  width: 250px;
+  height: 250px;
+  display: block;
+  overflow: hidden;
+  margin: 5px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.card:hover {
+  cursor: pointer;
+  transform: translateZ(15px) rotateX(-10deg);
+  box-shadow: 0 0 10px rgba(147,212,255,0.8);
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
