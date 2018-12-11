@@ -4,6 +4,8 @@ body {
   background-color: #333333;
   height: 100%;
   overflow: hidden;
+  filter:drop-shadow();
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
 }
 .section  {
   perspective: 1600px;
