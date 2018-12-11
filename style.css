@@ -32,7 +32,7 @@ font-family: 'Comfortaa', cursive;
 
 
 .container {
-  width: 950px;
+  width: 65%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +48,7 @@ font-family: 'Comfortaa', cursive;
   justify-content: center;
   align-items: center;
   transition: 0.3s;
-  transform: rotateX(30deg) rotateZ(-30deg) rotateY(10deg) translate3d(-100px, 0px,0px);
+  transform: rotateX(30deg) rotateZ(-30deg) rotateY(10deg) translate3d(-100px, 150px,0px);
   transform-style: preserve-3d;
 }
 
@@ -59,19 +59,21 @@ font-family: 'Comfortaa', cursive;
 }
 img {
   width: 100%;
+  display:block;
 }
 .card {
-  width: 250px;
-  height: 250px;
+  width: 35vh;
+  height: 35vh;
   display: block;
   overflow: hidden;
-  margin: 5px;
+  margin: 0.1cm;
   transition: 0.3s;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 1vh;
 }
 .card:hover {
   cursor: pointer;
-  transform: translateZ(15px) rotateX(-10deg);
+  transform: translateZ(3vh) rotateX(-5deg) ;
   box-shadow: 0 0 10px rgba(147,212,255,0.8);
 }
 
@@ -89,7 +91,7 @@ img {
  align-items: center;
  justify-content: center;
  list-style: none;
- width: 96%;
+ width: 95%;
  /* whatever width you want can be 100% */
 }
 /* Links inside the navbar */
