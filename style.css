@@ -74,7 +74,7 @@ img {
 .card:hover {
   cursor: pointer;
   transform: translateZ(3vh) rotateX(-5deg) ;
-  box-shadow: 0 0 10px rgba(147,212,255,0.8);
+  box-shadow: 0 0 120px rgba(147,212,255,0.8);
 }
 
 .navbar {
