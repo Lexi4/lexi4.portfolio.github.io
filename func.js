@@ -22,3 +22,6 @@ $('.card').on('click', function() {
     $('.containertext').toggleClass('container-origin');
     applyCSS();
 })
+
+var scene = document.getElementById('card');
+var parallax = new Parallax(card);
