@@ -1,8 +1,14 @@
 
 var sc = 150;
 function applyCSS(){
-  $('.container').css('transform', 'translate3d('+ (((event.pageX / ($(window).width()/2))*30)-100) +'px,' + (((event.pageY / ($(window).height()/2))*30) + sc) +'px,0px)');
 
+  $('.container').css('transform', 'translate3d('+
+  ((-((event.pageX - ($(window).width()/2))*0.2)-100)+
+  (-((event.pageY - ($(window).height()/2))*0.2))*0.3)+
+  'px,' +
+  (-((event.pageY - ($(window).height()/2))*0.2)+
+  ((-((event.pageX - ($(window).width()/2))*0.2)-100)*0.3) + sc)+
+  'px,0px)');
   //$('.container-origin').css('transform', 'rotate(0) translate3d(100px,'+ sc +'px,0px)');
 }
 
@@ -26,7 +32,7 @@ $(window).on('mousewheel', function(event) {
 });
 
 
-$('.card').on('click', function() {
-    $('.containertext').toggleClass('container-origin');
-    applyCSS();
-});
+//$('.card').on('click', function() {
+//    $('.containertext').toggleClass('container-origin');
+//    applyCSS();
+//});
