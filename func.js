@@ -1,27 +1,32 @@
-function applyCSS(){
-  $('.containertext').css('transform', 'rotateX(30deg) rotateZ(-30deg) rotateY(10deg) translate3d(-100px,'+ sc +'px,0px)');
-  $('.container-origin').css('transform', 'rotate(0) translate3d(0px,'+ sc +'px,0px)');
-}
+
 var sc = 150;
+function applyCSS(){
+  $('.container').css('transform', 'translate3d('+ (((event.pageX / ($(window).width()/2))*30)-100) +'px,' + (((event.pageY / ($(window).height()/2))*30) + sc) +'px,0px)');
+
+  //$('.container-origin').css('transform', 'rotate(0) translate3d(100px,'+ sc +'px,0px)');
+}
+
+
+$( document ).on( "mousemove", function( event ) {
+ applyCSS();
+});
+
+//var window.parallaxH = (event.pageY - ($(window).height()/2))*0.03;
 
 $(window).on('mousewheel', function(event) {
     if(event.deltaY > 0){
       if(sc < 150)
-        sc = sc + 100;
+        sc = sc + 25;
     }else{
       //if(sc > -2000)
-      sc = sc - 100;
+      sc = sc - 25;
     }
     applyCSS();
     console.log(sc);
 });
 
 
-
 $('.card').on('click', function() {
     $('.containertext').toggleClass('container-origin');
     applyCSS();
-})
-
-var scene = document.getElementById('card');
-var parallax = new Parallax(card);
+});

@@ -7,6 +7,17 @@ body {
 
     box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
 }
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .section  {
   perspective: 1600px;
   perspective-origin: center;
@@ -38,41 +49,45 @@ font-family: 'Comfortaa', cursive;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+    z-index: 0;
   justify-content: center;
   align-items: center;
   height: 10vh;
-    transition: 0.3s;
+    transform: translate3d(-100px, 150px,0px);
+      transform-style: preserve-3d;
 }
 
 .containertext {
   width: 100%;
-  z-index: 0;
   justify-content: center;
   align-items: center;
+  transform: rotateX(30deg) rotateZ(-30deg) rotateY(10deg) translate3d(-100px, 0px,0px);
   transition: 0.3s;
-  transform: rotateX(30deg) rotateZ(-30deg) rotateY(10deg) translate3d(-100px, 150px,0px);
   transform-style: preserve-3d;
 }
 
 
 .container-origin {
   transform: rotate(0);
+  transform: translate3d(3.5vw, 0px,0px);
 
 }
 .cardimage {
   width: 100%;
   height: 100%;
   object-fit:cover;
+  transition: 0.7s;
+    margin: 0;
 }
 .card {
-  width: 35vh;
-  height: 35vh;
+  width: 350px;
+  height: 350px;
   display: block;
   overflow: hidden;
   margin: 0.1cm;
   transition: 0.3s;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  border-radius: 1vh;
+  border-radius: 1vw;
   position: relative;
 }
 
@@ -81,10 +96,11 @@ font-family: 'Comfortaa', cursive;
   bottom: 15px;
   left: 15px;
   transition: 0.3s;
-font-size: 28px;
+font-size: 18px;
 font-family: 'Comfortaa', cursive;
 color: rgba(255, 255, 255, 0.8);
 z-index: 3;
+text-decoration: none;
 }
 
 .cardavatar {
@@ -92,7 +108,7 @@ z-index: 3;
   height: 50px;
   bottom: 15px;
   left: -5px;
-  transition: 0.3s;
+  transition: 0.5s;
   border-radius: 30px;
   opacity: 0;
     visibility: collapse;
@@ -116,7 +132,7 @@ opacity: 0;
 }
 .card:hover .cardtext{
     visibility: visible;
-    font-size: 25px;
+    font-size: 20px;
     bottom: 33px;
     left: 80;
 }
@@ -128,6 +144,16 @@ opacity: 0;
         z-index: 3;
 }
 
+.card:hover .cardimage{
+  width: 150%;
+  height: 150%;
+  margin: -75;
+  filter:brightness(0.8);
+  filter:blur(0px);
+}
+
+
+
 .cardoverlay{
     position: absolute;
   width: 100%;
@@ -135,6 +161,7 @@ opacity: 0;
   object-fit:cover;
   opacity: 0;
   transition: 0.5s;
+  z-index: 2;
       visibility: hidden;
 }
 
